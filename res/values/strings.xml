@@ -1,0 +1,22 @@
+<resources>
+
+    <string name="app_name">Fastmail.fm Contacts</string>
+    <string name="instructions_step1">Step 1: Go to your Android\'s settings, find the "Accounts" section, and click the "Add Account" button. Or just click here:</string>
+    <string name="account_btn_text">Add Account</string>
+    <string name="instructions_step2">Step 2: Select the "Fastmail.fm Contacts" option.</string>
+    <string name="instructions_step3">Step 3: Enter your Fastmail.fm account information.</string>
+    <string name="instructions_note">Note: Changes made on Fastmail.fm will sync to your device, but not the other way around. Don\'t like it? Cry me a river.</string>
+    <string name="icon_attribution">App icon is based on Address Book designed by misirlou from the Noun Project.</string>
+    <string name="new_account">Fastmail.fm Contacts Account</string>
+    <string name="email_label">Email Address:</string>
+    <string name="password_label">Password:</string>
+    <string name="autosync_label">Daily auto sync</string>
+    <string name="add_btn_text">Add Account</string>
+    <string name="cancel">Cancel</string>
+    <string name="required_alert">Please enter your email and password.</string>
+    <string name="authenticating_title">Authenticating&#8230;</string>
+    <string name="authenticating_message">Please wait while your credentials are checked.</string>
+    <string name="canceled_alert">Authentication was canceled.</string>
+    <string name="authentication_failed">Authentication failed. Check your email and password.</string>
+
+</resources>
