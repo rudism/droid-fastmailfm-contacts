@@ -18,6 +18,8 @@ You can build it from source, or I can save you the hassle if you buy it on the 
 
 - The sync adapter uses Fastmail.fm's LDAP API for read-only access to your address book. Changes you make on Fastmail.fm should sync to your phone within a day, but you will not be able to make changes from your phone and have them sync the other direction.
 
+- If you don't want to wait a whole day, or you disabled the auto-sync checkbox when creating the account, you can manually sync from the account screen in your Android settings at any time.
+
 - The fields that are synced are Name, Company, up to two Emails, Home phone, Mobile phone, Work phone, and Notes. Address could be added if enough people want it. Unfortunately birthdays and anniversaries are not available via LDAP so those can never be synced with this app.
 
 - **This is highly untested software. There are probably bugs. Feel free to report issues here, especially if you paid for the app. I'll fix bugs as quickly as I can.**
