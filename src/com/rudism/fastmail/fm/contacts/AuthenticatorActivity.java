@@ -74,9 +74,11 @@ public class AuthenticatorActivity extends ActionBarActivity {
 		if(success){
 			Account account = new Account(email, FastmailAuthenticator.ACCOUNT_TYPE);
 			AccountManager am = AccountManager.get(AuthenticatorActivity.this);
-			am.addAccountExplicitly(account, password, null);
-			ContentResolver.setSyncAutomatically(account, ContactsContract.AUTHORITY, true);
 			CheckBox autosync = (CheckBox) AuthenticatorActivity.this.findViewById(R.id.checkboxAutoSync);
+			Bundle userData = new Bundle();
+			userData.putString("autosync", autosync.isChecked() ? "true" : "false");
+			am.addAccountExplicitly(account, password, userData);
+			ContentResolver.setSyncAutomatically(account, ContactsContract.AUTHORITY, true);
 			if(autosync.isChecked()){
 				ContentResolver.addPeriodicSync(account, ContactsContract.AUTHORITY, new Bundle(), 86400000);
 			}
