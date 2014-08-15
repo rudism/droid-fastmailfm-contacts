@@ -4,7 +4,7 @@ Simple read-only access to your Fastmail.fm address book from your Android conta
 
 ##Download
 
-You can build it from source, or I can save you the hassle if you buy it on the Play Store for $0.99. I'll update this doc with the link once it's available.
+You can build it from source, or I can save you the hassle if you buy it on the Play Store for $0.99. [Here's the link](https://play.google.com/store/apps/details?id=com.rudism.fastmail.fm.contacts).
 
 ##Usage
 
