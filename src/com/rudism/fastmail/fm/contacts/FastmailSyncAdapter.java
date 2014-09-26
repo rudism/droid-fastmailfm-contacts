@@ -3,6 +3,7 @@ package com.rudism.fastmail.fm.contacts;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import com.unboundid.ldap.sdk.LDAPException;
@@ -27,6 +28,7 @@ import android.provider.ContactsContract;
 import android.provider.ContactsContract.Data;
 import android.provider.ContactsContract.RawContacts;
 import android.text.TextUtils;
+import android.util.Log;
 
 public class FastmailSyncAdapter extends AbstractThreadedSyncAdapter {
 
@@ -53,6 +55,19 @@ public class FastmailSyncAdapter extends AbstractThreadedSyncAdapter {
 					.appendQueryParameter(RawContacts.ACCOUNT_TYPE, FastmailAuthenticator.ACCOUNT_TYPE)
 					.build();
 
+			// preserve favorites
+			HashSet<Integer> favs = new HashSet<Integer>();
+			Cursor curs = resolver.query(rawContactUri, null, null, null, null);
+			if(curs.getCount() > 0){
+				while(curs.moveToNext()){
+					int sid = curs.getInt(curs.getColumnIndex(RawContacts.SOURCE_ID));
+					int isFav = curs.getInt(curs.getColumnIndex(RawContacts.STARRED));
+					if(isFav == 1){
+						favs.add(sid);
+					}
+				}
+			}
+			
 			resolver.delete(rawContactUri, null, null);
 			
 			ArrayList<ContentProviderOperation> operations = new ArrayList<ContentProviderOperation>();
@@ -63,10 +78,11 @@ public class FastmailSyncAdapter extends AbstractThreadedSyncAdapter {
 								.appendQueryParameter(ContactsContract.CALLER_IS_SYNCADAPTER, "true").build())
 								.withYieldAllowed(true);
 				builder.withValue(RawContacts.SOURCE_ID, contact.getId());
+				if(favs.contains(contact.getId())){
+					builder.withValue(RawContacts.STARRED, 1);
+				}
 				builder.withValue(RawContacts.ACCOUNT_NAME, account.name);
 				builder.withValue(RawContacts.ACCOUNT_TYPE, FastmailAuthenticator.ACCOUNT_TYPE);
-				if(VERSION.SDK_INT >= 11)
-					builder.withValue(RawContacts.RAW_CONTACT_IS_READ_ONLY, "true");
 				int idref = operations.size();
 				operations.add(builder.build());
 				

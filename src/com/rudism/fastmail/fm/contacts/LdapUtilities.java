@@ -59,8 +59,6 @@ public class LdapUtilities {
 			String phoneWork = entry.getAttributeValue("telephoneNumber");
 			String notes = entry.getAttributeValue("description");
 			
-			Log.d("Fastmail", "Got contact: " + displayName);
-			
 			FastmailContact contact = new FastmailContact(id, displayName, companyName, email, emailAlt, phoneHome, phoneWork, phoneMobile, notes);
 			contacts.add(contact);
 		}
