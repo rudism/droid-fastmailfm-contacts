@@ -21,10 +21,10 @@ android {
 
     defaultConfig {
         applicationId "com.rudism.fastmail.fm.contacts"
-        minSdkVersion 19
+        minSdkVersion 8
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.2"
     }
     buildTypes {
         release {
