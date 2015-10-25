@@ -2,9 +2,9 @@
 
 Simple read-only access to your Fastmail.fm address book from your Android contacts/people app. Something basic to hold me over until they implement proper CardDAV support.
 
-##Download
+## Privacy Policy
 
-You can build it from source, or I can save you the hassle if you buy it on the Play Store for $0.99. [Here's the link](https://play.google.com/store/apps/details?id=com.rudism.fastmail.fm.contacts).
+Fastmail.fm Contacts does not collect or store any personal information outside of the built-in Android system accounts service to store your Fastmail.com credentials, and the built-in Android contacts storage system to store the synchronized contact details. No information is shared with third parties or sent or retrieved from servers other than Fastmail.com at any time for any purpose. This app is not affiliated with Fastmail.
 
 ##Usage
 
